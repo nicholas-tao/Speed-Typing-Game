@@ -5,13 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "stylesheet" href = "styles.css">
     <script src = "script.js" defer></script>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
     <title>Speed Typing</title>
 </head>
 <body>
     <div class="timer" id ="timer"></div>
-    <div class="container">
-        <div class="quote-display" id = "quoteDisplay"></div>
-        <textarea id = "quoteInput" class="quote-input"autofocus></textarea>
+    <div class="wrapper">
+        <div class="container2">
+            <div class="quote-display" id = "quoteDisplay"></div>
+            <textarea id = "quoteInput" class="quote-input"autofocus></textarea>
+        </div>
+        <div class = "container1">
+            <div class="wpm" id ="wpm"></div>
+            <a class="waves-effect waves-light btn-large new-quote" id = "newQuote">New Quote</a>
+        </div>
     </div>
 </body>
 </html>
