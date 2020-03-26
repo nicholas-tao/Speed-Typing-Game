@@ -1,9 +1,7 @@
 /*
 To Do:
-1. Calculate WPM --> fix the calculation (the time it took to type needs to be fixed)
 2. Remove timer element
 3. Start timer when they start typing
-2. Reset/Stop timer after correctly typed quote
 3. Look for alternate API to get quotes/text for typing
 4. Store scores in a DB or a json lol idk how
 */
@@ -14,6 +12,8 @@ const quoteDisplayElement = document.getElementById('quoteDisplay')
 const quoteInputElement = document.getElementById('quoteInput')
 const timerElement = document.getElementById('timer')
 const wpmElement = document.getElementById('wpm')
+
+let completed = false
 
 quoteInputElement.addEventListener ('input', () => {
     /*
@@ -43,6 +43,7 @@ quoteInputElement.addEventListener ('input', () => {
 
     if (correct)  { 
         wpmElement.innerHTML = "Typing Speed: &nbsp;" +calcWPM(arrayQuote.length, getElapsedTime()) + "&nbsp;WPM"
+        completed = true
     }
 })
 
@@ -61,6 +62,7 @@ async function renderNewQuote () {
         quoteDisplayElement.appendChild(characterSpan)
     })
     quoteInputElement.value = null
+    completed = false
     startTimer()
     wpmElement.innerHTML = "Typing Speed: &nbsp;&nbsp;&nbsp;&nbsp; WPM"
 }
@@ -70,10 +72,11 @@ function startTimer() {
     timerElement.innerText = 0;
     startTime = new Date()
     setInterval(() => {
+        if (completed) return
         timer.innerText = getTimerTime()
     }, 1000)
-}
 
+}
 
 function getTimerTime () {
     return Math.floor((new Date() - startTime) / 1000)
@@ -84,7 +87,7 @@ function getElapsedTime () {
 }
 
 function calcWPM (arrayQuoteLength, timeElapsed) {
-    return Math.floor(arrayQuoteLength/6/timeElapsed*60)
+    return Math.floor(arrayQuoteLength/6/timeElapsed*60) //average word has 6 characters, timeElapsed*60 = time elapsed in minutes
 }
 
 document.getElementById("newQuote").addEventListener("click", renderNewQuote);
