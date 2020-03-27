@@ -1,7 +1,5 @@
 /*
 To Do:
-2. Remove timer element?
-3. !!!!Start timer when they start typing!!!
 3. Look for alternate API to get quotes/text for typing
 4. Store scores in a DB or a json lol idk how
 */
@@ -14,7 +12,6 @@ const timerElement = document.getElementById('timer')
 const wpmElement = document.getElementById('wpm')
 
 var completed = false
-var newQuote = false
 
 quoteInputElement.addEventListener ('input', () => {
     
@@ -61,36 +58,25 @@ async function renderNewQuote () {
     })
     quoteInputElement.value = null
     completed = false
-    //startTimer()
     wpmElement.innerHTML = "Typing Speed: &nbsp;&nbsp;&nbsp;&nbsp; WPM"
 }
 
-let startTime
+var interval
 function startTimer() {
     timerElement.innerText = 0;
-    startTime = Date.now()
-    var interval = setInterval(function() {
-        if (completed || newQuote) {
-            newQuote = false
-            return
-        } 
-        
+    let startTime = Date.now()
+    interval = setInterval(function() {
+        if (completed) return //stop timer if user finished typing quote       
         var elapsedTime = Date.now() - startTime;
         document.getElementById("timer").innerHTML = (elapsedTime / 1000).toFixed(2);
-    }, 100);
-
+    }, 100);    
 }
+
 
 function calcWPM (arrayQuoteLength, timeElapsed) {
     return Math.floor(arrayQuoteLength/6/timeElapsed*60) //average word has 6 characters, timeElapsed*60 = time elapsed in minutes
 }
 
-function newQuoteIsTrue () {
-    newQuote = true
-}
-
 document.getElementById("newQuote").addEventListener("click", renderNewQuote);
-document.getElementById("newQuote").addEventListener("click", newQuoteIsTrue);
-
 
 renderNewQuote()

@@ -31,11 +31,14 @@ body, .quote-input {
 }
 
 .timer {
+    /*
     position: absolute;
     top: 2rem;
     font-size: 3rem;
     color: #F4B41A;
     font-weight: bold;
+    */
+    display: none; /*hide timer*/
 }
 
 .container1 {
@@ -84,6 +87,7 @@ body, .quote-input {
     border-color: #143D59;
 }
 
+
 .correct {
     color: green;
 }
@@ -92,3 +96,4 @@ body, .quote-input {
     color: red;
     text-decoration: underline;
 }
+    
