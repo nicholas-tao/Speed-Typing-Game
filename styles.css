@@ -21,6 +21,11 @@ body, .quote-input {
     align-items: center;
 }
 
+.table {
+    justify-content: right !important;
+    align-items: center !important;
+}
+
 .container2 {
     display: block;
     background-color: #F4B41A;
@@ -31,20 +36,21 @@ body, .quote-input {
 }
 
 .timer {
-    /*
+    
     position: absolute;
     top: 2rem;
     font-size: 3rem;
     color: #F4B41A;
     font-weight: bold;
-    */
+    
     display: none; /*hide timer*/
 }
 
 .container1 {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left !important;
+    justify-content: left !important;
     top: 12rem;
     margin-top: 3rem;
 }

@@ -1,7 +1,9 @@
 /*
 To Do:
-3. Look for alternate API to get quotes/text for typing
-4. Store scores in a DB or a json lol idk how
+1. Look for alternate API to get quotes/text for typing
+2. Store scores in a DB or a json and then display past scores in table (time, speed in WPM)
+3. title/navbar?
+4. disable copy and paste into quoteInput
 */
 
 
@@ -36,9 +38,9 @@ quoteInputElement.addEventListener ('input', () => {
     })
 
     if (correct)  { 
-        wpmElement.innerHTML = "Typing Speed: &nbsp;" +calcWPM(arrayQuote.length, timerElement.innerText) + "&nbsp;WPM"
+       
+        wpmElement.innerHTML = "Typing Speed: &nbsp;" +calcWPM(arrayQuote.length, timerElement.innerHTML) + "&nbsp;WPM"
         completed = true
-        isEmpty = true
     }
 })
 
@@ -62,9 +64,10 @@ async function renderNewQuote () {
 }
 
 var interval
+var startTime
 function startTimer() {
     timerElement.innerText = 0;
-    let startTime = Date.now()
+    startTime = Date.now()
     interval = setInterval(function() {
         if (completed) return //stop timer if user finished typing quote       
         var elapsedTime = Date.now() - startTime;
