@@ -1,7 +1,7 @@
 /*
 To Do:
-2. Remove timer element
-3. Start timer when they start typing
+2. Remove timer element?
+3. !!!!Start timer when they start typing!!!
 3. Look for alternate API to get quotes/text for typing
 4. Store scores in a DB or a json lol idk how
 */
@@ -13,14 +13,11 @@ const quoteInputElement = document.getElementById('quoteInput')
 const timerElement = document.getElementById('timer')
 const wpmElement = document.getElementById('wpm')
 
-let completed = false
+var completed = false
+var newQuote = false
 
 quoteInputElement.addEventListener ('input', () => {
-    /*
-    if (quoteInputElement.value.length > 0) {
-        startTimer()
-    }
-    */
+    
     const arrayQuote = quoteDisplayElement.querySelectorAll('span')
     const arrayValue = quoteInputElement.value.split('')
    
@@ -42,8 +39,9 @@ quoteInputElement.addEventListener ('input', () => {
     })
 
     if (correct)  { 
-        wpmElement.innerHTML = "Typing Speed: &nbsp;" +calcWPM(arrayQuote.length, getElapsedTime()) + "&nbsp;WPM"
+        wpmElement.innerHTML = "Typing Speed: &nbsp;" +calcWPM(arrayQuote.length, timerElement.innerText) + "&nbsp;WPM"
         completed = true
+        isEmpty = true
     }
 })
 
@@ -63,33 +61,36 @@ async function renderNewQuote () {
     })
     quoteInputElement.value = null
     completed = false
-    startTimer()
+    //startTimer()
     wpmElement.innerHTML = "Typing Speed: &nbsp;&nbsp;&nbsp;&nbsp; WPM"
 }
 
 let startTime
 function startTimer() {
     timerElement.innerText = 0;
-    startTime = new Date()
-    setInterval(() => {
-        if (completed) return
-        timer.innerText = getTimerTime()
-    }, 1000)
+    startTime = Date.now()
+    var interval = setInterval(function() {
+        if (completed || newQuote) {
+            newQuote = false
+            return
+        } 
+        
+        var elapsedTime = Date.now() - startTime;
+        document.getElementById("timer").innerHTML = (elapsedTime / 1000).toFixed(2);
+    }, 100);
 
-}
-
-function getTimerTime () {
-    return Math.floor((new Date() - startTime) / 1000)
-}
-
-function getElapsedTime () {
-    return (new Date() - startTime) / 1000
 }
 
 function calcWPM (arrayQuoteLength, timeElapsed) {
     return Math.floor(arrayQuoteLength/6/timeElapsed*60) //average word has 6 characters, timeElapsed*60 = time elapsed in minutes
 }
 
+function newQuoteIsTrue () {
+    newQuote = true
+}
+
 document.getElementById("newQuote").addEventListener("click", renderNewQuote);
+document.getElementById("newQuote").addEventListener("click", newQuoteIsTrue);
+
 
 renderNewQuote()
