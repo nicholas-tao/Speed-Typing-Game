@@ -2,13 +2,13 @@
   box-sizing: border-box;
 }
 
-body {
+.main-content {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   margin: 0;
-  background-color: #143d59;
+  background-color: #202123;
 }
 
 body,
@@ -31,11 +31,15 @@ body,
 }
 
 .instructions {
-  color: black;
+  color: white;
+  font-size: 1.1rem;
 }
 
 .instructions-title {
-  color: #f4b41a;
+  color: #75a594;
+  font-weight: 550;
+  text-align: center;
+  font-size: 2.5rem;
 }
 
 .table {
@@ -44,9 +48,18 @@ body,
   margin-right: 0;
 }
 
+.time-row,
+.speed-row {
+  color: #75a594;
+}
+
+th {
+  color: white;
+}
+
 .container2 {
   display: block;
-  background-color: #f4b41a;
+  background-color: #75a594;
   padding: 1rem;
   border-radius: 0.5rem;
   width: 100%;
@@ -56,7 +69,7 @@ body,
   position: absolute;
   top: 2rem;
   font-size: 3rem;
-  color: #f4b41a;
+  color: #75a594;
   font-weight: bold;
 
   display: none; /*hide timer*/
@@ -68,25 +81,26 @@ body,
   top: 12rem;
   margin-top: 3rem;
   align-items: flex-start;
-  color: #f4b41a;
+  color: #75a594;
 }
 
 .table {
   display: flex;
-  color: #f4b41a;
+  color: #75a594;
+  border: white !important;
 }
 
 .wpm {
   font-size: 1.75rem;
-  color: #f4b41a;
+  color: #75a594;
   font-weight: bold;
   margin-bottom: 3rem;
 }
 
 .new-quote {
   font-size: 2rem;
-  background-color: #f4b41a !important;
-  color: #143d59 !important;
+  background-color: #75a594 !important;
+  color: #202123 !important;
   font-weight: bold;
 }
 
@@ -99,7 +113,7 @@ body,
 
 .quote-input {
   background-color: transparent;
-  border: 2px solid #a1922e;
+  border: 2px solid #75a594;
   outline: none;
   width: 100%;
   height: 8rem;
@@ -111,7 +125,7 @@ body,
 }
 
 .quote-input:focus {
-  border-color: #143d59;
+  border-color: #202123;
 }
 
 .correct {
@@ -121,4 +135,12 @@ body,
 .incorrect {
   color: red;
   text-decoration: underline;
+}
+
+.page-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 4rem;
+  background-color: #202123 !important;
 }

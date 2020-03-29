@@ -17,50 +17,62 @@
     <title>Speed Typing</title>
   </head>
   <body>
-    <div class="timer" id="timer"></div>
-    <div class="wrapper">
-      <div>
-        <h4 class="instructions-title">Instructions</h4>
-        <ol class="instructions">
-          <li>
-            Type the quote as fast as you can!
-          </li>
-          <li>
-            The time starts when you click on the text field.
-          </li>
-          <li>
-            You must type the whole quote correctly to finish
-          </li>
-        </ol>
-      </div>
-      <div class="container2">
-        <div class="quote-display" id="quoteDisplay"></div>
-        <textarea
-          id="quoteInput"
-          class="quote-input"
-          onClick="checkToStartTimer()"
-        ></textarea>
-      </div>
-      <div class="wrapper2">
-        <div class="container1">
-          <div class="wpm" id="wpm"></div>
+      <div class ="main-content">
+        <div class="timer" id="timer"></div>
+        <div class="wrapper">
+          <div>
+            <h1 class="instructions-title">Speed Typing Game</h4>
+            <ol class="instructions">
+              <li>
+                Type the quote as fast as you can!
+              </li>
+              <li>
+                The time starts when you click on the text field and ends when you have correctly typed the quote
+              </li>
+              <li>
+                  Click the "NEW QUOTE" button to get a quote
+              </li>
+              <li>
+                  Your 8 most recent results are displayed in a table below
+              </li>
+            </ol>
+          </div>
+          <div class="container2">
+            <div class="quote-display" id="quoteDisplay"></div>
+            <textarea
+              id="quoteInput"
+              class="quote-input"
+              onClick="checkToStartTimer()"
+              autofocus
+            ></textarea>
+          </div>
+          <div class="wrapper2">
+            <div class="container1">
+              <div class="wpm" id="wpm"></div>
+            </div>
+            <div class="container1">
+              <a class="waves-effect waves-light btn-large new-quote" id="newQuote">New Quote</a>
+            </div>
+          </div>
+            <div class="container3">
+              <table class="responsive-table" id="table">
+                  <tr class = "time-row" id = "timeRow">
+                    <th>Time</th>
+                  </tr>
+                  <tr class = "speed-row"id = "speedRow">
+                    <th>Speed (WPM)</td>
+                  </tr>
+              </table>
+            </div>
         </div>
-        <div class="container1">
-          <a class="waves-effect waves-light btn-large new-quote" id="newQuote"
-            >New Quote</a
-          >
-        </div>
       </div>
-        <div class="container3">
-          <table class="responsive-table" id="table">
-              <tr id = "timeRow">
-                <th>Time</th>
-              </tr>
-              <tr id = "speedRow">
-                <th>Speed (WPM)</td>
-              </tr>
-          </table>
+   
+    <footer class="page-footer">
+        <div class="footer-copyright">
+            © Copyright Nicholas Tao 2020
+          </div>
         </div>
-    </div>
+      </footer>
   </body>
+  
 </html>

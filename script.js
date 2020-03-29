@@ -88,7 +88,7 @@ function calcWPM(arrayQuoteLength, timeElapsed) {
 }
 
 function addToTable(currTime, wpm, numTimesPlayed) {
-  if (this.numTimesPlayed > 5) {
+  if (this.numTimesPlayed > 8) {
     timeRow.deleteCell(1);
     speedRow.deleteCell(1);
   }
