@@ -111,6 +111,7 @@ document.getElementById("newQuote").addEventListener("click", renderNewQuote);
 
 renderNewQuote();
 
+/*
 // To prevent user from copy and pasting into the text field
 (function() {
   var onload = window.onload;
@@ -121,12 +122,7 @@ renderNewQuote();
     }
 
     var fields = [];
-    var inputs = document.getElementsByTagName("input");
     var textareas = document.getElementsByTagName("textarea");
-
-    for (var i = 0; i < inputs.length; i++) {
-      fields.push(inputs[i]);
-    }
 
     for (var i = 0; i < textareas.length; i++) {
       fields.push(textareas[i]);
@@ -176,3 +172,5 @@ renderNewQuote();
     }
   };
 })();
+
+*/
