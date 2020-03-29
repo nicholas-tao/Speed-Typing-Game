@@ -1,7 +1,8 @@
 /*
 To Do:
-4. disable copy and paste into quoteInput (do this at end bc need to do testing)
-6. Make the table horizontal instead!
+1. disable copy and paste into quoteInput (do this at end bc need to do testing)
+2. Display 8 best scores instead of 8 most recent scores
+3. Add Screenshot to README.md
 */
 
 const RANDOM_QUOTE_API_URL = "https://api.quotable.io/random";
