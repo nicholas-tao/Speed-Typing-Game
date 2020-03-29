@@ -3,7 +3,8 @@ To Do:
 1. Look for alternate API to get quotes/text for typing
 2. Store scores in a DB or a json and then display past scores in table (time, speed in WPM)
 3. title/navbar?
-4. disable copy and paste into quoteInput
+4. disable copy and paste into quoteInput (do this at end bc need to do testing)
+5. add info/instructions (time starts counting when user clicks textarea, must type whole quote with no errors to finish)
 */
 
 
@@ -14,6 +15,7 @@ const timerElement = document.getElementById('timer')
 const wpmElement = document.getElementById('wpm')
 
 var completed = false
+var numTimesPlayed = 0
 
 quoteInputElement.addEventListener ('input', () => {
     
@@ -38,9 +40,12 @@ quoteInputElement.addEventListener ('input', () => {
     })
 
     if (correct)  { 
-       
-        wpmElement.innerHTML = "Typing Speed: &nbsp;" +calcWPM(arrayQuote.length, timerElement.innerHTML) + "&nbsp;WPM"
+        numTimesPlayed++
+        var wpm = calcWPM(arrayQuote.length, timerElement.innerHTML, numTimesPlayed)
+        wpmElement.innerHTML = "Typing Speed: &nbsp;" +wpm + "&nbsp;WPM"
         completed = true
+        var currTime = new Date().toLocaleTimeString()
+        addToTable(currTime, wpm)
     }
 })
 
@@ -79,6 +84,20 @@ function startTimer() {
 function calcWPM (arrayQuoteLength, timeElapsed) {
     return Math.floor(arrayQuoteLength/6/timeElapsed*60) //average word has 6 characters, timeElapsed*60 = time elapsed in minutes
 }
+
+function addToTable (currTime, wpm, numTimesPlayed) {
+   
+    if (this.numTimesPlayed > 5) {
+        document.getElementById('table').deleteRow(1);
+    }
+
+   var x = document.getElementById('table').insertRow(numTimesPlayed);
+   var timeCol = x.insertCell(0);
+   var wpmCol = x.insertCell(1);
+   timeCol.innerHTML = currTime;
+   wpmCol.innerHTML = wpm;
+}
+
 
 document.getElementById("newQuote").addEventListener("click", renderNewQuote);
 

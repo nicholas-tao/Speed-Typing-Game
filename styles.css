@@ -18,12 +18,20 @@ body, .quote-input {
 .wrapper {
     display: flex;
     flex-direction: column;
-    align-items: center;
+}
+
+.wrapper2 {
+    display: flex;
+    flex-direction: row;
 }
 
 .table {
+    display: flex;
     justify-content: right !important;
     align-items: center !important;
+    margin-left:auto; 
+    margin-right:0;
+    align-items: flex-end;
 }
 
 .container2 {
@@ -49,10 +57,17 @@ body, .quote-input {
 .container1 {
     display: flex;
     flex-direction: column;
-    align-items: left !important;
-    justify-content: left !important;
     top: 12rem;
     margin-top: 3rem;
+    margin-right: auto;
+    margin-left: 0; 
+    align-items: flex-start;
+}
+
+.table {
+    display: flex;
+    color: #F4B41A;
+    align-items: flex-end !important;
 }
 
 .wpm {
