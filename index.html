@@ -24,7 +24,7 @@
             <h1 class="instructions-title">Speed Typing Game</h4>
             <ol class="instructions">
               <li>
-                Type the quote as fast as you can!
+                Type the quote as fast as you can (copy and paste has been disabled)!
               </li>
               <li>
                 The time starts when you click on the text field and ends when you have correctly typed the quote
@@ -44,6 +44,7 @@
               class="quote-input"
               onClick="checkToStartTimer()"
               autofocus
+              onpaste="return false;"
             ></textarea>
           </div>
           <div class="wrapper2">
