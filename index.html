@@ -1,44 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = "stylesheet" href = "styles.css">
-    <script type="text/javascript" src = "script.js" defer></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="text/javascript" src="script.js" defer></script>
     <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     <title>Speed Typing</title>
-</head>
-<body>
-    <div class="timer" id ="timer"></div>
+  </head>
+  <body>
+    <div class="timer" id="timer"></div>
     <div class="wrapper">
-        <div class="container2">
-            <div class="quote-display" id = "quoteDisplay"></div>
-            <textarea id = "quoteInput" class="quote-input" onClick ="startTimer()"></textarea>
+      <div>
+        <h4 class="instructions-title">Instructions</h4>
+        <ol class="instructions">
+          <li>
+            Type the quote as fast as you can!
+          </li>
+          <li>
+            The time starts when you click on the text field.
+          </li>
+          <li>
+            You must type the whole quote correctly to finish
+          </li>
+        </ol>
+      </div>
+      <div class="container2">
+        <div class="quote-display" id="quoteDisplay"></div>
+        <textarea
+          id="quoteInput"
+          class="quote-input"
+          onClick="checkToStartTimer()"
+        ></textarea>
+      </div>
+      <div class="wrapper2">
+        <div class="container1">
+          <div class="wpm" id="wpm"></div>
         </div>
-        <div class = "wrapper2 row">
-            <div class = "container1 col s6">
-                <div class="wpm" id ="wpm"></div>
-                <a class="waves-effect waves-light btn-large new-quote" id = "newQuote">New Quote</a>
-            </div>
-            
-            <div class = "table col s6">
-                <table class = "responsive-table" id = "table">
-                    <thead>
-                      <tr>
-                          <th>Time</th>
-                          <th>Speed (WPM)</th>
-                      </tr>
-                    </thead>
-            
-                   
-                  </table>
-            </div> 
+        <div class="container1">
+          <a class="waves-effect waves-light btn-large new-quote" id="newQuote"
+            >New Quote</a
+          >
+        </div>
+      </div>
+        <div class="container3">
+          <table class="responsive-table" id="table">
+              <tr id = "timeRow">
+                <th>Time</th>
+              </tr>
+              <tr id = "speedRow">
+                <th>Speed (WPM)</td>
+              </tr>
+          </table>
         </div>
     </div>
-</body>
+  </body>
 </html>

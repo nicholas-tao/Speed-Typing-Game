@@ -1,120 +1,124 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    background-color: #143D59;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #143d59;
 }
 
-body, .quote-input {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+body,
+.quote-input {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 .wrapper {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin-top: -10rem;
 }
 
 .wrapper2 {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.instructions {
+  color: black;
+}
+
+.instructions-title {
+  color: #f4b41a;
 }
 
 .table {
-    display: flex;
-    justify-content: right !important;
-    align-items: center !important;
-    margin-left:auto; 
-    margin-right:0;
-    align-items: flex-end;
+  display: flex;
+  margin-left: auto;
+  margin-right: 0;
 }
 
 .container2 {
-    display: block;
-    background-color: #F4B41A;
-    padding: 1rem;
-    border-radius: .5rem;
-    width: 1200px;
-    max-width: 90%;
+  display: block;
+  background-color: #f4b41a;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  width: 100%;
 }
 
 .timer {
-    
-    position: absolute;
-    top: 2rem;
-    font-size: 3rem;
-    color: #F4B41A;
-    font-weight: bold;
-    
-    display: none; /*hide timer*/
+  position: absolute;
+  top: 2rem;
+  font-size: 3rem;
+  color: #f4b41a;
+  font-weight: bold;
+
+  display: none; /*hide timer*/
 }
 
 .container1 {
-    display: flex;
-    flex-direction: column;
-    top: 12rem;
-    margin-top: 3rem;
-    margin-right: auto;
-    margin-left: 0; 
-    align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  top: 12rem;
+  margin-top: 3rem;
+  align-items: flex-start;
+  color: #f4b41a;
 }
 
 .table {
-    display: flex;
-    color: #F4B41A;
-    align-items: flex-end !important;
+  display: flex;
+  color: #f4b41a;
 }
 
 .wpm {
-    font-size: 2rem;
-    color: #F4B41A;
-    font-weight: bold;
-    margin-bottom: 3rem;
+  font-size: 1.75rem;
+  color: #f4b41a;
+  font-weight: bold;
+  margin-bottom: 3rem;
 }
 
 .new-quote {
-    font-size: 2rem;
-    background-color: #F4B41A !important;
-    color: #143D59!important;
-    font-weight: bold;
+  font-size: 2rem;
+  background-color: #f4b41a !important;
+  color: #143d59 !important;
+  font-weight: bold;
 }
 
 .quote-display {
-    margin-bottom: 1rem;
-    margin-left: calc(1rem + 2px);
-    margin-right: calc (1rem + 2px);
-    font-size: 1.3rem;
+  margin-bottom: 1rem;
+  margin-left: calc(1rem + 2px);
+  margin-right: calc (1rem + 2px);
+  font-size: 1.3rem;
 }
 
 .quote-input {
-    background-color: transparent;
-    border: 2px solid #A1922E;
-    outline: none;
-    width: 100%;
-    height: 8rem;
-    margin: auto;
-    resize: none;
-    padding: .5rem 1rem;
-    font-size: 1.3rem;
-    border-radius: 0.5rem;
+  background-color: transparent;
+  border: 2px solid #a1922e;
+  outline: none;
+  width: 100%;
+  height: 8rem;
+  margin: auto;
+  resize: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.3rem;
+  border-radius: 0.5rem;
 }
 
 .quote-input:focus {
-    border-color: #143D59;
+  border-color: #143d59;
 }
 
-
 .correct {
-    color: green;
+  color: green;
 }
 
 .incorrect {
-    color: red;
-    text-decoration: underline;
+  color: red;
+  text-decoration: underline;
 }
-    
